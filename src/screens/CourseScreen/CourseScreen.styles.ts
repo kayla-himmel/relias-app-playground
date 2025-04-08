@@ -118,4 +118,29 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginTop: 8,
   },
+  accreditationLink: {
+    color: colors.brand.purpleDark,
+    textDecorationLine: 'underline',
+  },
+  webviewContainer: {
+    marginBottom: 24,
+    borderRadius: 8,
+    overflow: 'hidden',
+    height: 400,
+    borderWidth: 1,
+    borderColor: colors.base.grayShadow,
+  },
+  startButton: {
+    backgroundColor: colors.brand.teal,
+    borderRadius: 8,
+    padding: 16,
+    alignItems: 'center',
+    marginTop: 16,
+    marginBottom: 24,
+  },
+  startButtonText: {
+    color: colors.base.white,
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });

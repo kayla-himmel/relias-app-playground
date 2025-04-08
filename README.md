@@ -25,55 +25,6 @@ This project is based off the RN Project template, with a few mocked screens and
 
 ## (Optional) Steps for further customization
 
-- Adding additional ESLint rules
-
-  - [import/no-default-export](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md)
-
-    - can be desirable to simplify refactoring
-
-      ```sh
-      npm install eslint-plugin-import --save-dev
-      ```
-
-      ```js
-      // in eslintrc.js
-
-      rules: {
-        // ...other rules...
-        "import/no-default-export": "error", // <-- add the rule
-      }
-      ```
-
-  - [unused-imports/no-unused-imports](https://github.com/sweepline/eslint-plugin-unused-imports)
-
-    - can automatically remove unused imports
-
-      ```sh
-      npm install eslint-plugin-unused-imports --save-dev
-      ```
-
-      ```js
-      // in eslintrc.js
-
-      rules: {
-        // ...other rules...
-        "unused-imports/no-unused-imports": "warn", // <-- add the rule
-      }
-      ```
-
-  - [no-nested-ternary](https://eslint.org/docs/latest/rules/no-nested-ternary)
-
-    - can enforce simpler logic
-
-      ```js
-      // in eslintrc.js
-
-      rules: {
-        // ...other rules...
-        "no-nested-ternary": "error", // <-- add the rule
-      }
-      ```
-
 - Customizing Jest
 
   - to collect Code Coverage add the following to your `jest.config.js`
@@ -99,12 +50,6 @@ This project is based off the RN Project template, with a few mocked screens and
 
 ## Next steps
 
-### Adding Navigation
-
-You have several options for adding navigation to your app:
-
-- [React Navigation](https://reactnavigation.org)
-- [Expo Router](https://expo.dev/router)
 
 ### Add Apple Team ID
 

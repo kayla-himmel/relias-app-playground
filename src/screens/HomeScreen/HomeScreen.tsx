@@ -6,6 +6,7 @@ import {Header} from '../../components/Header/Header';
 import {Footer} from '../../components/Footer/Footer';
 import {styles} from './HomeScreen.styles';
 import {RootStackParamList} from '../../navigation/AppNavigator';
+import {TEST_IDS} from '../../constants/testIds';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -17,17 +18,18 @@ export const HomeScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={TEST_IDS.HOME_SCREEN}>
       <Header />
       <View style={styles.content}>
         <View style={styles.card}>
-          <Text style={styles.title}>Welcome to Nurse.com</Text>
-          <Text style={styles.subtitle}>
+          <Text style={styles.title} testID={TEST_IDS.HOME_TITLE}>Welcome to Nurse.com</Text>
+          <Text style={styles.subtitle} testID={TEST_IDS.HOME_SUBTITLE}>
             Your journey to excellence in nursing education starts here
           </Text>
           <TouchableOpacity
             style={styles.button}
-            onPress={handleExploreCourses}>
+            onPress={handleExploreCourses}
+            testID={TEST_IDS.HOME_EXPLORE_BUTTON}>
             <Text style={styles.buttonText}>Explore Courses</Text>
           </TouchableOpacity>
         </View>

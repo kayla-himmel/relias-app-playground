@@ -16,10 +16,14 @@ export interface CourseDetails {
   accreditation: {
     provider: string;
     statement: string;
+    moreInfo: string;
+    moreInfoLinkURL: string;
+    moreInfoLinkText: string;
   };
   targetAudience: string[];
   prerequisites: string[];
   additionalInfo: string;
+  contentUrl?: string; // URL for the course content to be displayed in WebView
 }
 
 export const courseDetails: CourseDetails[] = [
@@ -55,6 +59,9 @@ export const courseDetails: CourseDetails[] = [
       provider: 'American Nurses Credentialing Center (ANCC)',
       statement:
         "This continuing nursing education activity was approved by the American Nurses Credentialing Center's Commission on Accreditation.",
+      moreInfo: 'More information at ',
+      moreInfoLinkURL: 'https://www.nurse.com/accreditation',
+      moreInfoLinkText: 'nurse.com/accreditation',
     },
     targetAudience: [
       'New graduate nurses',
@@ -68,6 +75,7 @@ export const courseDetails: CourseDetails[] = [
     ],
     additionalInfo:
       'This course provides a solid foundation for nursing practice and is recommended for those new to the field or seeking to refresh their knowledge of fundamental nursing concepts.',
+    contentUrl: 'https://youtu.be/BkLjfGSXlyI?si=68y2OMEcX-5tFf3Z',
   },
   {
     id: '2',
@@ -102,6 +110,9 @@ export const courseDetails: CourseDetails[] = [
       provider: 'American Nurses Credentialing Center (ANCC)',
       statement:
         "This continuing nursing education activity was approved by the American Nurses Credentialing Center's Commission on Accreditation.",
+      moreInfo: 'More information at ',
+      moreInfoLinkURL: 'https://www.nurse.com/accreditation',
+      moreInfoLinkText: 'nurse.com/accreditation',
     },
     targetAudience: [
       'Registered nurses with 2+ years of experience',
@@ -116,6 +127,7 @@ export const courseDetails: CourseDetails[] = [
     ],
     additionalInfo:
       'This course is designed for experienced nurses seeking to enhance their clinical skills and knowledge. It includes case studies and practical applications of advanced nursing concepts.',
+    contentUrl: 'https://youtu.be/0mznL85jg-E?si=l3sDVpP7OyXmfyD0',
   },
   {
     id: '3',
@@ -149,6 +161,9 @@ export const courseDetails: CourseDetails[] = [
       provider: 'American Nurses Credentialing Center (ANCC)',
       statement:
         "This continuing nursing education activity was approved by the American Nurses Credentialing Center's Commission on Accreditation.",
+      moreInfo: 'More information at ',
+      moreInfoLinkURL: 'https://www.nurse.com/accreditation',
+      moreInfoLinkText: 'nurse.com/accreditation',
     },
     targetAudience: [
       'Nurse managers and supervisors',
@@ -162,6 +177,7 @@ export const courseDetails: CourseDetails[] = [
     ],
     additionalInfo:
       'This course provides practical leadership skills specifically tailored for healthcare environments. It includes real-world scenarios and interactive exercises to enhance learning.',
+    contentUrl: 'https://youtu.be/S_txsxoRanA?si=T4GMbPTSlvBBqvKD',
   },
   {
     id: '4',
@@ -195,6 +211,9 @@ export const courseDetails: CourseDetails[] = [
       provider: 'American Nurses Credentialing Center (ANCC)',
       statement:
         "This continuing nursing education activity was approved by the American Nurses Credentialing Center's Commission on Accreditation.",
+      moreInfo: 'More information at ',
+      moreInfoLinkURL: 'https://www.nurse.com/accreditation',
+      moreInfoLinkText: 'nurse.com/accreditation',
     },
     targetAudience: [
       'Emergency department nurses',
@@ -209,5 +228,6 @@ export const courseDetails: CourseDetails[] = [
     ],
     additionalInfo:
       'This course provides essential knowledge and skills for nurses working in emergency care settings. It includes simulation scenarios and practical applications of emergency care principles.',
+    contentUrl: 'https://youtu.be/9cqrORN4TQA?si=ogh_Hb0BFGuAgRRy',
   },
 ];

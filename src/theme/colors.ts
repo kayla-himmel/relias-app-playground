@@ -16,4 +16,7 @@ export const colors = {
     grayDark: '#0e2230',
     black: '#000000',
   },
+  alerts: {
+    warning: '#e74c3c',
+  },
 };
