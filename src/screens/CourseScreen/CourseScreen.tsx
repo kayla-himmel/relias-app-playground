@@ -80,8 +80,6 @@ export const CourseScreen = () => {
             <WebViewContent 
               url={course.contentUrl} 
               title={course.title}
-              onError={(error) => console.error('WebView error:', error)}
-              onTimeout={handleTimeout}
             />
           </View>
         ) : (
