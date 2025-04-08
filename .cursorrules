@@ -1,0 +1,157 @@
+# React Native & Expo Development Guidelines
+
+## Code Style and Structure
+
+- Write concise, technical TypeScript code with accurate examples
+- Use functional and declarative programming patterns; avoid classes
+- Prefer iteration and modularization over code duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
+- Structure files: exported component, subcomponents, helpers, static content, types
+- Follow Expo's official documentation: <https://docs.expo.dev/>
+
+## Naming Conventions
+
+- Use lowercase with dashes for directories (e.g., components/auth-wizard)
+- Favor named exports for components
+- Use PascalCase for component files (e.g., CourseScreen.tsx)
+- Use camelCase for utility files (e.g., search.ts)
+
+## TypeScript Usage
+
+- Use TypeScript for all code; prefer interfaces over types
+- Avoid enums; use maps instead
+- Use functional components with TypeScript interfaces
+- Use strict mode in TypeScript for better type safety
+- Define proper types for navigation params (e.g., RootStackParamList)
+
+## Syntax and Formatting
+
+- Use the "function" keyword for pure functions
+- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements
+- Use declarative JSX
+- Use Prettier for consistent code formatting
+- Follow ESLint rules defined in eslintrc.js
+
+## UI and Styling
+
+- Use Expo's built-in components for common UI patterns and layouts
+- Implement responsive design with Flexbox and Expo's useWindowDimensions
+- Use styled-components or Tailwind CSS for component styling
+- Implement dark mode support using Expo's useColorScheme
+- Ensure high accessibility (a11y) standards using ARIA roles and native accessibility props
+- Leverage react-native-reanimated and react-native-gesture-handler for performant animations
+- Use a centralized color system (e.g., colors.ts) for consistent theming
+
+## Safe Area Management
+
+- Use SafeAreaProvider from react-native-safe-area-context globally
+- Wrap top-level components with SafeAreaView for notches, status bars, and screen insets
+- Use SafeAreaScrollView for scrollable content
+- Avoid hardcoding padding or margins for safe areas; rely on SafeAreaView and context hooks
+
+## Performance Optimization
+
+- Minimize useState and useEffect; prefer context and reducers for state management
+- Use Expo's AppLoading and SplashScreen for optimized app startup
+- Optimize images: use WebP format, include size data, implement lazy loading with expo-image
+- Implement code splitting and lazy loading with React's Suspense and dynamic imports
+- Profile and monitor performance using React Native's tools and Expo's debugging features
+- Avoid unnecessary re-renders with useMemo and useCallback hooks
+- Use memo for pure components that receive props
+
+## Navigation
+
+- Use react-navigation for routing; follow best practices for stack, tab, and drawer navigators
+- Leverage deep linking and universal links for better user engagement
+- Use dynamic routes with expo-router for better navigation handling
+- Define navigation types in a central location (e.g., RootStackParamList)
+- Use type-safe navigation with TypeScript
+
+## State Management
+
+- Use React Context and useReducer for global state
+- Leverage react-query for data fetching and caching; avoid excessive API calls
+- For complex state, consider Zustand or Redux Toolkit
+- Handle URL search parameters with expo-linking
+- Use memoization for derived state (useMemo)
+
+## Error Handling and Validation
+
+- Use Zod for runtime validation and error handling
+- Implement proper error logging with Sentry or similar services
+- Prioritize error handling and edge cases:
+  - Handle errors at the beginning of functions
+  - Use early returns for error conditions
+  - Avoid unnecessary else statements; use if-return pattern
+  - Implement global error boundaries
+- Use expo-error-reporter for production error logging
+
+## Testing
+
+- Write unit tests with Jest and React Native Testing Library
+- Implement integration tests for critical flows with Detox
+- Use Expo's testing tools for different environments
+- Consider snapshot testing for UI consistency
+- Use testIDs for component selection in tests and add any new testIDs to the testIDs.ts file
+- Create utility wrappers for testing (e.g., jestWrapper.tsx)
+
+## Security
+
+- Sanitize user inputs to prevent XSS attacks
+- Use react-native-encrypted-storage for sensitive data
+- Ensure secure API communication with HTTPS and proper authentication
+- Follow Expo's Security guidelines: <https://docs.expo.dev/guides/security/>
+
+## Accessibility (a11y)
+
+- Ensure text scaling and font adjustments for accessibility
+- Meet WCAG 2.2 standards for all components and screens
+- Use semantic HTML elements and proper ARIA roles
+- Implement proper focus management for keyboard navigation
+- Ensure sufficient color contrast (minimum 4.5:1 for normal text, 3:1 for large text)
+- Provide text alternatives for non-text content
+- Design for screen readers with proper labeling and announcements
+- Test with VoiceOver (iOS) and TalkBack (Android)
+- Support dynamic text sizing for users with visual impairments
+- Implement proper touch targets (minimum 44x44 points)
+- Use descriptive link text instead of generic phrases like "click here"
+- Provide error messages that are clear and actionable
+
+## Dark Mode
+
+- Implement a comprehensive dark mode using Expo's useColorScheme
+- Create a theme system with light and dark variants for all colors
+- Use semantic color naming (e.g., primary, secondary, background) instead of specific colors
+- Ensure all UI elements have appropriate contrast in both light and dark modes
+- Test dark mode on all screens and components
+- Consider user preferences and system settings
+- Implement smooth transitions between light and dark modes
+- Use appropriate shadows and elevation in dark mode
+- Ensure images and icons are visible in both modes
+
+## Responsive Design
+
+- Design for both phone and tablet breakpoints
+- Use Flexbox for responsive layouts
+- Implement responsive typography that scales appropriately
+- Create adaptive layouts that adjust to different screen sizes
+- Use Expo's useWindowDimensions for responsive measurements
+- Test on multiple device sizes and orientations
+- Implement proper spacing and padding for different screen sizes
+- Consider landscape mode for tablets
+- Use responsive images that adapt to screen size
+- Implement proper safe area handling for notches and system UI
+
+## Key Conventions
+
+1. Rely on Expo's managed workflow for streamlined development
+2. Prioritize Mobile Web Vitals (Load Time, Jank, Responsiveness)
+3. Use expo-constants for environment variables and configuration
+4. Use expo-permissions for device permissions
+5. Follow Expo's deployment best practices: <https://docs.expo.dev/distribution/introduction/>
+6. Ensure iOS and Android compatibility through extensive testing
+
+## API Documentation
+
+- Use Expo's official documentation: <https://docs.expo.dev/>
+- Refer to Expo's documentation for Views, Blueprints, and Extensions
