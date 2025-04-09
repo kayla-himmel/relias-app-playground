@@ -41,16 +41,6 @@ This project is based off the RN Project template, with a few mocked screens and
   ]
   ```
 
-- Add more GitHub workflows
-
-  - if you are using EAS Update you can use the following GitHub Action to show a QR code to scan for iOS and Android
-    - [EAS Update GitHub Actions](https://docs.expo.dev/eas-update/github-actions/)
-
-- Add [Husky](https://typicode.github.io/husky/get-started.html) for pre-commit hooks
-
-## Next steps
-
-
 ### Add Apple Team ID
 
 - You should add the following to your `app.config.js`

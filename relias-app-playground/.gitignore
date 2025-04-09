@@ -1,3 +1,5 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
 # dependencies
 node_modules/
 
@@ -5,6 +7,7 @@ node_modules/
 .expo/
 dist/
 web-build/
+expo-env.d.ts
 
 # Native
 *.orig.*
@@ -13,11 +16,14 @@ web-build/
 *.p12
 *.key
 *.mobileprovision
-ios/
-android/
 
 # Metro
 .metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
 
 # macOS
 .DS_Store
@@ -29,12 +35,4 @@ android/
 # typescript
 *.tsbuildinfo
 
-# NPM Lockfile (just in case)
-package-lock.json
-
-# vscode debug config
-.vscode/launch.json
-
-# Native Modules
-modules/*/android/build
-modules/*/android/.gradle
+app-example
