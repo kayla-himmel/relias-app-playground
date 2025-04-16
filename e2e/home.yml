@@ -1,4 +1,4 @@
-appId: com.kaylahimmelberger.myapp # This is an example app id. Replace it with your app id.
+appId: com.kaylahimmelberger.reliasappplayground
 ---
 - launchApp:
     arguments:

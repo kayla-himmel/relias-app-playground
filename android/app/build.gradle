@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.kaylahimmelberger.myapp'
+    namespace 'com.kaylahimmelberger.reliasappplayground'
     defaultConfig {
-        applicationId 'com.kaylahimmelberger.myapp'
+        applicationId 'com.kaylahimmelberger.reliasappplayground'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
