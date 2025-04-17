@@ -24,8 +24,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.kaylahimmelberger.myapp"/>
-        <data android:scheme="exp+relias-app-playground"/>
+        <data android:scheme="com.kaylahimmelberger.reliasappplayground"/>
+        <data android:scheme="exp+reliasappplayground"/>
       </intent-filter>
     </activity>
     <activity android:name="com.reactnativelegal.ReactNativeLegalActivity" android:exported="false" android:launchMode="singleTask"/>

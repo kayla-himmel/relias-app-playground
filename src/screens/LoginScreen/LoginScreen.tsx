@@ -7,7 +7,6 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { firebaseAuth, FirebaseAuthError } from '../../config/firebase';
 import { colors } from '../../theme/colors';
 import { ActivityIndicator } from '../../components/ActivityIndicator/ActivityIndicator';
 import { Error } from '../../components/Error/Error';
@@ -27,15 +26,6 @@ export const LoginScreen = () => {
 
     setIsLoading(true);
     setError(null);
-
-    try {
-      await firebaseAuth.signInWithEmailAndPassword(email, password);
-    } catch (error) {
-      const firebaseError = error as FirebaseAuthError;
-      setError(getErrorMessage(firebaseError.code));
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   const getErrorMessage = (code: string): string => {
