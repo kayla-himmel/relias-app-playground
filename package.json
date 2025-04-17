@@ -12,9 +12,7 @@
     "lint": "eslint src",
     "format": "prettier --write src",
     "test": "jest",
-    "test:e2e": "maestro test e2e",
-    "prestart:storybook": "sb-rn-get-stories",
-    "start:storybook": "WITH_STORYBOOK='true' expo start"
+    "test:e2e": "maestro test e2e"
   },
   "dependencies": {
     "@react-navigation/elements": "^2.3.7",
@@ -29,6 +27,7 @@
     "expo-network": "~7.0.5",
     "expo-status-bar": "~2.0.1",
     "expo-system-ui": "~4.0.9",
+    "firebase": "^11.6.0",
     "react": "18.3.1",
     "react-native": "~0.77.2",
     "react-native-gesture-handler": "~2.25.0",
@@ -47,9 +46,6 @@
     "@react-native-community/datetimepicker": "^8.3.0",
     "@react-native-community/slider": "^4.5.6",
     "@react-native/eslint-config": "~0.77.2",
-    "@storybook/addon-ondevice-actions": "^8.6.2",
-    "@storybook/addon-ondevice-controls": "^8.6.2",
-    "@storybook/react-native": "^8.6.2",
     "@tanstack/eslint-plugin-query": "^5.71.5",
     "@testing-library/react-native": "^13.2.0",
     "@types/jest": "^29.5.14",

@@ -1,13 +1,6 @@
-// Learn more https://docs.expo.io/guides/customizing-metro
-const path = require('path');
-const {getDefaultConfig} = require('expo/metro-config');
-const withStorybook = require('@storybook/react-native/metro/withStorybook');
+const { getDefaultConfig } = require('@expo/metro-config');
 
-/** @type {import('expo/metro-config').MetroConfig} */
-const config = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname);
+defaultConfig.resolver.sourceExts.push('cjs');
 
-module.exports = withStorybook(config, {
-  enabled: process.env.WITH_STORYBOOK === 'true',
-  configPath: path.resolve(__dirname, './.storybook'),
-  onDisabledRemoveStorybook: true,
-});
+module.exports = defaultConfig;
