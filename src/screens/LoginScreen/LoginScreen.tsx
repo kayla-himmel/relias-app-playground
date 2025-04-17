@@ -11,6 +11,8 @@ import { colors } from '../../theme/colors';
 import { ActivityIndicator } from '../../components/ActivityIndicator/ActivityIndicator';
 import { Error } from '../../components/Error/Error';
 import { styles } from './LoginScreen.styles';
+import { existingUserSignIn } from '../../auth/existingUserSignIn';
+// import { userSignUp } from '../../auth/userSignUp';
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -23,25 +25,33 @@ export const LoginScreen = () => {
       setError('Please enter both email and password');
       return;
     }
-
+    existingUserSignIn({email, password});
     setIsLoading(true);
     setError(null);
   };
 
-  const getErrorMessage = (code: string): string => {
-    switch (code) {
-      case 'auth/invalid-email':
-        return 'Invalid email address';
-      case 'auth/user-disabled':
-        return 'This account has been disabled';
-      case 'auth/user-not-found':
-        return 'No account found with this email';
-      case 'auth/wrong-password':
-        return 'Incorrect password';
-      default:
-        return 'An error occurred. Please try again.';
-    }
-  };
+  // const handleAccountSetup = async () => {
+  //   if (!email || !password) {
+  //     setError('Please enter both email and password');
+  //     return;
+  //   }
+  //   userSignUp({email, password});
+  // };
+
+  // const getErrorMessage = (code: string): string => {
+  //   switch (code) {
+  //     case 'auth/invalid-email':
+  //       return 'Invalid email address';
+  //     case 'auth/user-disabled':
+  //       return 'This account has been disabled';
+  //     case 'auth/user-not-found':
+  //       return 'No account found with this email';
+  //     case 'auth/wrong-password':
+  //       return 'Incorrect password';
+  //     default:
+  //       return 'An error occurred. Please try again.';
+  //   }
+  // };
 
   return (
     <KeyboardAvoidingView
@@ -87,6 +97,13 @@ export const LoginScreen = () => {
               <Text style={styles.buttonText}>Sign In</Text>
             )}
           </TouchableOpacity>
+          {/* <TouchableOpacity
+            style={styles.button}
+            onPress={handleAccountSetup}
+            disabled={isLoading}
+          >
+            <Text style={styles.buttonText}>Create Account</Text>
+          </TouchableOpacity> */}
         </View>
       </View>
     </KeyboardAvoidingView>
