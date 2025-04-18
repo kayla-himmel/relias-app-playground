@@ -12,14 +12,22 @@ import { ActivityIndicator } from '../../components/ActivityIndicator/ActivityIn
 import { Error } from '../../components/Error/Error';
 import { styles } from './LoginScreen.styles';
 import { existingUserSignIn } from '../../auth/existingUserSignIn';
-// import { userSignUp } from '../../auth/userSignUp';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../navigation/AppNavigator';
+
+type LoginScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Login'
+>;
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
+  const navigation = useNavigation<LoginScreenNavigationProp>();
+  
   const handleLogin = async () => {
     if (!email || !password) {
       setError('Please enter both email and password');
@@ -30,13 +38,9 @@ export const LoginScreen = () => {
     setError(null);
   };
 
-  // const handleAccountSetup = async () => {
-  //   if (!email || !password) {
-  //     setError('Please enter both email and password');
-  //     return;
-  //   }
-  //   userSignUp({email, password});
-  // };
+  const handleCreateAccountLink = async () => {
+    navigation.navigate('CreateAccount');
+  };
 
   // const getErrorMessage = (code: string): string => {
   //   switch (code) {
@@ -97,13 +101,13 @@ export const LoginScreen = () => {
               <Text style={styles.buttonText}>Sign In</Text>
             )}
           </TouchableOpacity>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             style={styles.button}
-            onPress={handleAccountSetup}
+            onPress={handleCreateAccountLink}
             disabled={isLoading}
           >
-            <Text style={styles.buttonText}>Create Account</Text>
-          </TouchableOpacity> */}
+            <Text style={styles.buttonText}>Create an Account</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </KeyboardAvoidingView>

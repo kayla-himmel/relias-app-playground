@@ -44,4 +44,8 @@ export enum TEST_IDS {
   
   // WebViewContent
   WEBVIEW_CONTENT = 'webview-content',
+
+  // Alert
+  ALERT = 'alert',
+  ALERT_CLOSE_BUTTON = 'alert-close-button',
 }

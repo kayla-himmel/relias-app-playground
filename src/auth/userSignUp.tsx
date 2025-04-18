@@ -6,18 +6,13 @@ interface UserSignUpProps {
 }
 
 export const userSignUp = async ({email, password}: UserSignUpProps) => {
-
-const auth = getAuth();
-
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.warn('User signed up:', user);
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.error('Error signing up:', errorCode, errorMessage);
-  });
+  const auth = getAuth();
+  
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    return userCredential.user;
+  } catch (error: any) {
+    console.error('Error signing up:', error.code, error.message);
+    throw error;
+  }
 }

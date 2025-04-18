@@ -5,9 +5,11 @@ import {HomeScreen} from '../screens/HomeScreen/HomeScreen';
 import {CourseListScreen} from '../screens/CourseListScreen/CourseListScreen';
 import {CourseScreen} from '../screens/CourseScreen/CourseScreen';
 import {LoginScreen} from '../screens/LoginScreen/LoginScreen';
+import { CreateAccountScreen } from '../screens/CreateAccountScreen/CreateAccountScreen';
 
 export type RootStackParamList = {
   Login: undefined;
+  CreateAccount: undefined;
   Home: undefined;
   CourseList: undefined;
   CourseDetails: {courseId: string};
@@ -19,11 +21,12 @@ export const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}>
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="CreateAccount" component={CreateAccountScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="CourseList" component={CourseListScreen} />
         <Stack.Screen name="CourseDetails" component={CourseScreen} />
